@@ -1,6 +1,8 @@
 <?php
 $tables = [
-    'waka_city'
+    'waka_city',
+    'waka_user',
+    'waka_wechat_user'
 ];
 
 $db = mysqli_init();
