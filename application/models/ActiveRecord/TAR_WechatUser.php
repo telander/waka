@@ -3,6 +3,7 @@ class TAR_WechatUser extends Wk_ActiveRecord {
 
     public function __construct(array $sqlRow = null) {
         if (isset($sqlRow)) {
+            $this->id = isset($sqlRow['id']) ? intval($sqlRow['id']) : null;
             $this->nickname = $sqlRow['nickname'];
             $this->openId = $sqlRow['open_id'];
             $this->unionId = $sqlRow['union_id'];
