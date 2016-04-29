@@ -1,0 +1,14 @@
+{
+    "product":{
+        "DOMAIN_COOKIE":"iwakasoccer.com",
+        "DOMAIN_SERVER":"iwakasoccer.com",
+        "PAYMENT_DOMAIN_SERVER":"iwakasoccer.com",
+        "CDN":"http://img.iwakasoccer.com"
+    },
+    "debug":{
+        "DOMAIN_COOKIE":"waka.com",
+        "DOMAIN_SERVER":"http://waka.com:8888",
+        "PAYMENT_DOMAIN_SERVER": "http://waka.com:8888",
+        "CDN":"/"
+    }
+}

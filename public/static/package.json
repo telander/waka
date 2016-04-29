@@ -1,0 +1,40 @@
+{
+  "name": "waka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "del": "^2.2.0",
+    "ejs-html-loader": "^1.2.2",
+    "ejs-loader": "^0.2.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "gulp": "^3.9.1",
+    "gulp-file-include": "^0.13.7",
+    "gulp-less": "^3.0.5",
+    "gulp-load-plugins": "^1.2.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-preprocess": "^2.0.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-replace-path": "^0.4.0",
+    "gulp-replace-url": "0.0.1",
+    "gulp-util": "^3.0.7",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.16.0",
+    "less": "^2.6.1",
+    "less-loader": "^2.2.3",
+    "node-less": "^1.0.0",
+    "node-style": "^1.0.0",
+    "run-sequence": "^1.1.5",
+    "style-loader": "^0.13.1",
+    "through2": "^2.0.1",
+    "webpack": "^1.13.0",
+    "webpack-stream": "^3.2.0"
+  }
+}
