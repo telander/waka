@@ -54,7 +54,58 @@
         },
         createSign: function () {
             return ajax.createSign();
-        }
+        },
+        clientType: function() {
+            if (ua.indexOf("micromessenger") !== -1) {
+                return "wx";
+            }
+            return "other";
+        },
+        urlParams: function (name) {
+            var reg = new RegExp("(^|\\?|&)" + name + "=([^&#]*)");
+            var r = window.location.href.substring(1).match(reg);
+            if (r != null) {
+                return decodeURIComponent(r[2]);
+            }
+            return '';
+        },
+        weChatOpenId: function (callback) {
+            if (waka.clientType() === "wx") {
+                var code = waka.urlParams("code");
+                if(waka.urlParams('fromAuth') === 'userinfo'){
+                    if(callback && typeof callback=='function')callback();
+                }else{
+                    if (code) {
+                        waka.ajax({
+                            type: 'GET',
+                            url: DOMAIN_SERVER + '/ajax/snsAjax/getWeChatOpenId',
+                            data: {
+                                'code': code
+                            },
+                            async: false,
+                            success: function (data) {
+                                if (data.ok === 0) {
+                                    travo.wxOpenId = data.obj.openid;
+                                    if(callback && typeof callback=='function')callback();
+                                }else{
+                                    alert(data.msg);
+                                }
+                            },
+                            error:function(data){
+                                alert(data.msg);
+                            }
+                        });
+                    } else {
+                        var url = 'http://tao.117go.com:8011/data/snsAjax/getWxOAuth2Redirect_Base?retUrl=' + encodeURIComponent(window.location.href);
+                        window.location.replace(url);
+                        return;
+                    }
+                }
+
+            } else {
+                travo.alert("请在微信中打开!");
+            }
+        },
      });
 
     window.k.ajax.send = ajax.send;

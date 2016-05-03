@@ -2,7 +2,9 @@
 $tables = [
     'waka_city',
     'waka_user',
-    'waka_wechat_user'
+    'waka_wechat_user',
+    'waka_usertoken',
+    'waka_mobile_verify'
 ];
 
 $db = mysqli_init();

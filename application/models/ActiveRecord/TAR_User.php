@@ -17,7 +17,7 @@ class TAR_User extends Wk_ActiveRecord {
             $this->headImgUrl = $sqlRow['head_img_url'];
             $this->createTime = $sqlRow['create_time'];
             $this->courtsId = $sqlRow['courts_id'];
-            $this->isDelete = isset($sqlRow['is_delete']) ? intval($sqlRow['is_delete']) : null;
+            $this->isDeleted = isset($sqlRow['is_deleted']) ? intval($sqlRow['is_deleted']) : null;
         }
     }
 
@@ -40,7 +40,7 @@ class TAR_User extends Wk_ActiveRecord {
             'head_img_url' => ['name' => 'headImgUrl', 'type' => 's'],
             'create_time' => ['name' => 'createTime', 'type' => 's'],
             'courts_id' => ['name' => 'courtsId', 'type' => 's'],
-            'is_delete' => ['name' => 'isDelete', 'type' => 'i'],
+            'is_deleted' => ['name' => 'isDeleted', 'type' => 'i'],
         ];
     }
 
@@ -112,6 +112,6 @@ class TAR_User extends Wk_ActiveRecord {
     /**
      * @var integer
      */
-    public $isDelete = 0;
+    public $isDeleted = 0;
 
 }
