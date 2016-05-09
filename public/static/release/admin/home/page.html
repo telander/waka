@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>哇咔欢迎你</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link href='http://iwakasoccer.com:8888/static/css/bootstrap.min.css' rel='stylesheet'>
+
+    <link href='http://iwakasoccer.com:8888/static/release/admin/home/page.css' rel='stylesheet'>
+    <script>
+        var _hmt = {push: function(){}};
+    </script>
+</head>
+<body>
+
+<header class="header">
+    <a href="/admin/home" class="header-logo">哇咔足球管理后台</a>
+    <div class="header-nav">
+
+            <div class="dropdown user-nav">
+                <a style="display:block; color: #fff !important; text-decoration: none;" class="dropdown-toggle" id="dropdownMenuUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" onclick="javascript:void(0)">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <span id="userMobileLoad" style="color: #fff" >用户</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuUser">
+                    <li><button>修改密码</button></li>
+                    <li><button>登出</button></li>
+                </ul>
+            </div>
+
+    </div>
+</header>
+
+<script src="http://iwakasoccer.com:8888/static/newlib/js/core/app.admin.min.js"></script>
+<script src="http://iwakasoccer.com:8888/static/release/admin/home/page.js"></script>
+<script>
+    $document = $(document);
+    $window = $(window);
+</script>
+</body>
+</html>

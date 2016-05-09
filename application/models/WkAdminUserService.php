@@ -50,4 +50,11 @@ class WkAdminUserService extends Wk_Service {
         $user->save();
         return $user->id;
     }
+
+    public function setLoginCookie($curUser) {
+        $_COOKIE['WAKAUID'] = md5($curUser->id);
+        $_COOKIE['WAKAUMB'] = $curUser->mobile;
+        setcookie('WAKAUID', $_COOKIE['WAKAUID'], 0, '/', WAKA_DOMAIN);
+        setcookie('WAKAUMB', $_COOKIE['WAKAUMB'], 0, '/', WAKA_DOMAIN);
+    }
 }

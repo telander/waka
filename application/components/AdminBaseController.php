@@ -23,6 +23,15 @@ class AdminBaseController extends Wk_WebController{
             Wk::app()->user->utoken = "";
         }
 
+        if (isset($this->curUser)) {
+            WkAdminUserService::getInstance()->setLoginCookie($this->curUser);
+        } else {
+            unset($_COOKIE['WAKAUID']);
+            unset($_COOKIE['WAKAUMB']);
+            setcookie('WAKAUID', '', time() - 3600, '/', WAKA_DOMAIN);
+            setcookie('WAKAUMB', '', time() - 3600, '/', WAKA_DOMAIN);
+        }
+
         $access = $this->access();
         if (!empty($access['?']) && in_array($this->actionName, $access['?'])) {
             if ($this->isLogin()) {

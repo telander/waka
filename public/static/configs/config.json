@@ -6,9 +6,9 @@
         "CDN":"http://img.iwakasoccer.com/"
     },
     "debug":{
-        "DOMAIN_COOKIE":"http://10.1.29.149:8888",
-        "DOMAIN_SERVER":"http://10.1.29.149:8888",
-        "PAYMENT_DOMAIN_SERVER":"http://10.1.29.149:8888",
-        "CDN":"http://10.1.29.149:8888/"
+        "DOMAIN_COOKIE":"http://iwakasoccer.com:8888",
+        "DOMAIN_SERVER":"http://iwakasoccer.com:8888",
+        "PAYMENT_DOMAIN_SERVER":"http://iwakasoccer.com:8888",
+        "CDN":"http://iwakasoccer.com:8888/"
     }
 }

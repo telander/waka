@@ -21,13 +21,16 @@ console.log(__dirname);
 
 var entries = {
         'newlib/js/core/app.min': ["./jslib/modules/waka.js"],
-        'newlib/js/core/app.mobile.min': ["./jslib/modules/waka.js"]
+        'newlib/js/core/app.mobile.min': ["./jslib/modules/waka.js"],
+        'newlib/js/core/app.admin.min': ["./jslib/modules/waka.admin.js"]
         //'newlib/js/core/app.min': ["./jslib/3rdlib/jquery-1.10.2.min.js", "./jslib/3rdlib/less-1.7.3.min.js", "./jslib/3rdlib/artTemplate3.js", "./newlib/js/core/app.js"],
         //'newlib/js/core/app.mobile.min': ["./jslib/3rdlib/jquery-2.1.1.min.js"]
 
     };
 
 var files = glob.sync("./dev/web/**/page.js", {});
+var filesAdmin = glob.sync("./dev/admin/**/page.js", {});
+files = files.concat(filesAdmin);
 var pagePrefix = "release/";
 console.log(files);
 files.forEach(function(filepath) {

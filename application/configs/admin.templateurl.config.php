@@ -6,4 +6,11 @@
  * Time: 上午11:10
  */
 
-return [];
+return [
+    '/admin' => [
+        'path' => '/admin/home',
+    ],
+    '/admin/login' => [
+        'path' => '/admin/login',
+    ],
+];

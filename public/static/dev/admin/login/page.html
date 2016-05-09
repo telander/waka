@@ -1,0 +1,21 @@
+@@include('../../layouts/admin_header.html',{
+"title": "哇咔欢迎你",
+"stylesheet": "<link href='page.css' rel='stylesheet'>"
+})
+
+<div class="container-fluid">
+
+    <form id="loginForm" class="login-form" role="form" method="post" action="/ajax/adminUserApi/submitAdminLogin">
+        <h2>登陆</h2>
+        <div id="loginFormMobile" class="form-group">
+            <input type="text" class="form-control input-lg" name="mobile" placeholder="手机号" required autofocus>
+        </div>
+        <div id="loginFormPassword" class="form-group">
+            <input type="password" class="form-control input-lg" name="password" placeholder="密码" required>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    </form>
+
+</div>
+
+@@include('../../layouts/admin_footer.html')

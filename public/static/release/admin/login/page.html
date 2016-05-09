@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>哇咔欢迎你</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link href='http://iwakasoccer.com:8888/static/css/bootstrap.min.css' rel='stylesheet'>
+
+    <link href='http://iwakasoccer.com:8888/static/release/admin/login/page.css' rel='stylesheet'>
+    <script>
+        var _hmt = {push: function(){}};
+    </script>
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <form id="loginForm" class="login-form" role="form" method="post" action="/ajax/adminUserApi/submitAdminLogin">
+        <h2>登陆</h2>
+        <div id="loginFormMobile" class="form-group">
+            <input type="text" class="form-control input-lg" name="mobile" placeholder="手机号" required autofocus>
+        </div>
+        <div id="loginFormPassword" class="form-group">
+            <input type="password" class="form-control input-lg" name="password" placeholder="密码" required>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+    </form>
+
+</div>
+
+<script src="http://iwakasoccer.com:8888/static/newlib/js/core/app.admin.min.js"></script>
+<script src="http://iwakasoccer.com:8888/static/release/admin/login/page.js"></script>
+<script>
+    $document = $(document);
+    $window = $(window);
+</script>
+</body>
+</html>

@@ -54,6 +54,21 @@ gulp.task("less:build", function() {
         .pipe(gulp.dest("release"));
 });
 
+gulp.task("css:copy", function() {
+    return gulp.src([
+        'jslib/bootstrap/css/*.css'
+    ])
+        .pipe(cssmin())
+        .pipe(gulp.dest("css"));
+});
+
+gulp.task("font:copy", function() {
+   return gulp.src([
+       'jslib/bootstrap/fonts/*'
+   ])
+       .pipe(gulp.dest("fonts"));
+});
+
 gulp.task("js:webpack:build", function(callback) {
     var myConfig = Object.create(webpackConfig);
     webpack(myConfig, function(err, stats) {
@@ -73,5 +88,5 @@ gulp.task("clean", function(callback) {
 });
 
 gulp.task("build", function(callback) {
-    runSequence("clean", ["js:webpack:build"], ["img:copy", "less:build", "html:copy"], callback);
+    runSequence("clean", ["js:webpack:build"], ["img:copy", "less:build", "css:copy", "font:copy", "html:copy"], callback);
 });

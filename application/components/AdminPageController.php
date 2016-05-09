@@ -15,6 +15,9 @@ class AdminPageController extends AdminBaseController {
         if ($this->isGuest() && strpos($_SERVER['REQUEST_URI'], '/admin/login') !== 0) {
             Wk_Request::redirect('/admin/login');
         }
+        if ($this->isLogin() && strpos($_SERVER['REQUEST_URI'], '/admin/login') === 0) {
+            Wk_Request::redirect('/admin');
+        }
         $config = isset($_GET['__config__'])?$_GET['__config__']:null;
         if(!isset($config)) throw new Wk_Exception("", -1);
 

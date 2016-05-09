@@ -10,6 +10,7 @@ class AdminUserApiController extends AdminApiController{
 
     public function access() {
         return [
+            "@" => ['submitAdminLogout'],
             "?" => ["submitAdminLogin", "submitAdminRegister"],
         ];
     }
@@ -34,8 +35,13 @@ class AdminUserApiController extends AdminApiController{
         return $user;
     }
 
+    /**
+     * 管理员退出登录
+     */
     public function submitAdminLogoutAction() {
-
+        if(session_status() == PHP_SESSION_ACTIVE) {
+            unset($_SESSION['user']);
+        }
     }
 
 

@@ -36,10 +36,10 @@ return [
     // db config
     'db' => [
         'default' => [
-            'host'=>'112.124.69.70', //'127.0.0.1',
+            'host'=>'127.0.0.1', //'112.124.69.70', //
             'port'=>3306,
-            'username'=> 'waka',
-            'password'=>'waka123',
+            'username'=> 'root', //'waka',
+            'password'=>'swerfvcx', //'waka123',
             'db'=>'waka'
         ]
     ],
