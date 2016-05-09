@@ -211,4 +211,14 @@ class Wk_Request {
         return self::getRequestNumberParam('request', 'float', $param, $defaultValue, $allowEmpty);
     }
 
+    /**
+     * @return int
+     */
+    public static function getTime() {
+        if (!(Wk::app() instanceof WebApp)) {
+            return time();
+        }
+        return $_SERVER['REQUEST_TIME'];
+    }
+
 } 

@@ -19,9 +19,13 @@ class Wk {
     public static function createWebApp($config, $startTime) {
         self::$config = $config;
         self::$componentStack['app'] = new WebApp();
+        self::$componentStack['app']->startTime = $startTime;
         return self::$componentStack['app'];
     }
 
+    /**
+     * @return Wk_Log
+     */
     public static function logger() {
         self::$componentStack['logger'] = new Wk_Log(self::$config['log']);
         return self::$componentStack['logger'];

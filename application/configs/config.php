@@ -26,6 +26,7 @@ return [
     'log' => [
         'use_syslog'=>false,
         'path_prefix'=>'/var/log/waka/',
+        'static_path' => '/var/log/waka/stat',
         'err_path'=>'/var/log/waka/err',
         'info_path'=>'/var/log/waka/log',
         'ct_log' => '/var/log/waka/ct_log/',
@@ -35,10 +36,10 @@ return [
     // db config
     'db' => [
         'default' => [
-            'host'=>'127.0.0.1',
+            'host'=>'112.124.69.70', //'127.0.0.1',
             'port'=>3306,
-            'username'=> 'root',
-            'password'=>'swerfvcx',
+            'username'=> 'waka',
+            'password'=>'waka123',
             'db'=>'waka'
         ]
     ],
@@ -63,7 +64,7 @@ return [
     // redis config
     'redis' => [
         'default'=>[
-            'host'=>'10.1.25.59',
+            'host'=>'112.124.69.70',   //'10.1.25.58',
             'port'=>6379,
             'prefix'=>''
         ]

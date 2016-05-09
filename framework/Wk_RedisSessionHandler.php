@@ -31,19 +31,20 @@ class Wk_RedisSessionHandler implements SessionHandlerInterface {
 
     public function read($id)
     {
-        $redKey = 'k:session:'.$id;
+        $redKey = 'wk:session:'.$id;
         return Wk::redis()->get($redKey);
     }
 
     public function write($id, $data)
     {
-        $redKey = 'k:session:'.$id;
+        $redKey = 'wk:session:'.$id;
+//        return Wk::redis()->set($redKey, $data, self::$lifetime);
         return Wk::redis()->setex($redKey, self::$lifetime, $data);
     }
 
     public function destroy($id)
     {
-        $redKey = 'k:session:'.$id;
+        $redKey = 'wk:session:'.$id;
         $n = Wk::redis()->del($redKey);
         if ($n == 1) return true;
         return false;

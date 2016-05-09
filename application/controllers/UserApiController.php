@@ -37,7 +37,7 @@ class UserApiController extends ApiController{
      * @throws Wk_Exception
      */
     public function submitWxLoginAction() {
-        $openId = Wk_Request::getGetString("openId", null, false);
+        $openId = Wk_Request::getRequestString("openId", null, false);
         $user = WkUserService::getInstance()->submitLoginWithWechat($openId);
         if (session_status() == PHP_SESSION_ACTIVE) {
             $appParam = [];

@@ -137,7 +137,7 @@ module.exports = {
                 if (qValue.length < 1) continue;
                 paramStr += dataKeys[i] + '=' + $.trim(qValue) + '&';
             }
-            _mySettings.data.sign = encrypt.s(paramStr + 'tzls117go!@#' + getSessionId());
+            _mySettings.data.sign = encrypt.s(paramStr + 'wakasoccer!@#' + getSessionId());
         } else {
             _mySettings.data = mySettings.data || {};
             var _data = {};

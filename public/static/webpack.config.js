@@ -9,14 +9,14 @@ var cssExtractPlugin = new ExtractTextPlugin("[name].css");
 var htmlExtractPlugin = new ExtractTextPlugin("[name].html");
 //替换变量
 var definePlugin = new webpack.DefinePlugin({
-    'process.env.__DOMAIN_COOKIE':JSON.stringify(paramConfig.product.DOMAIN_COOKIE),
-    'process.env.__DOMAIN_SERVER':JSON.stringify(paramConfig.product.DOMAIN_SERVER),
-    'process.env.__PAYMENT_DOMAIN_SERVER':JSON.stringify(paramConfig.product.PAYMENT_DOMAIN_SERVER),
-    'process.env.__CDN':JSON.stringify(paramConfig.product.CDN)
+    'process.env.__DOMAIN_COOKIE':JSON.stringify(paramConfig.debug.DOMAIN_COOKIE),
+    'process.env.__DOMAIN_SERVER':JSON.stringify(paramConfig.debug.DOMAIN_SERVER),
+    'process.env.__PAYMENT_DOMAIN_SERVER':JSON.stringify(paramConfig.debug.PAYMENT_DOMAIN_SERVER),
+    'process.env.__CDN':JSON.stringify(paramConfig.debug.CDN)
 });
 
 //var glob = require("glob");
-console.log(paramConfig.product);
+console.log(paramConfig.debug);
 console.log(__dirname);
 
 var entries = {
