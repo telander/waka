@@ -1,0 +1,25 @@
+@@include('../../layouts/admin_header.html',{
+"title": "哇咔欢迎你",
+"stylesheet": "<link href='page.css' rel='stylesheet'>"
+})
+
+@@include('../../../templates/admin/admin_head_nav.html',{})
+
+<div class="content-wrapper" style="min-height: 516px;">
+    @@include('../../../templates/admin/admin_left_nav.html')
+
+        <div class="content-top-nav">
+            <ul class="nav nav-tabs nav-justified">
+                <li id="basicInfo" role="presentation" class="active"><a href="" onclick="javascript:void(0)">基本信息</a></li>
+                <li id="fieldBasicInfo" role="presentation" class=""><a href="" onclick="javascript:void(0)">场地基本信息</a></li>
+                <li id="fieldScheduleInfo" role="presentation" class=""><a href="" onclick="javascript:void(0)">球场时间信息</a></li>
+                <li id="fieldConstraintInfo" role="presentation" class=""><a href="" onclick="javascript:void(0)">场地限制信息</a></li>
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>
+
+@@include('../../layouts/admin_footer.html')

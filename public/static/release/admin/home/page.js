@@ -40,32 +40,23 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(8);
+	module.exports = __webpack_require__(11);
 
 
 /***/ },
-
-/***/ 8:
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Created by jill on 16/5/9.
-	 */
-
-	__webpack_require__(9);
-	$(function() {
-
-	});
-
-
-/***/ },
-
-/***/ 9:
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */
 /***/ function(module, exports) {
 
 	/**
@@ -73,8 +64,63 @@
 	 */
 	$(function(){
 	    $("#userMobileLoad").text(window.k.getAdminMobile());
+
+	    $("#userLogout").on("click", function() {
+	        var $this = $(this);
+	        window.k.ajax({
+	            type: "POST",
+	            url: $this.data("url"),
+	            success: function(data){
+	                if(data.ok == 1) {
+	                    window.location.href = "/admin/login";
+	                }
+	                else {
+	                    alert(data.msg || "退出登录失败，请联系管理员");
+	                }
+	            }
+	        });
+	    });
+
+	    $("#userModifyPassword").on("click", function() {
+	        var $this = $(this);
+	        alert("请联系管理员，暂时不开放");
+	        //window.k.ajax({
+	        //    type: "POST",
+	        //    url: $this.data("url"),
+	        //    success: function(data){
+	        //
+	        //    }
+	        //});
+	    });
 	});
 
-/***/ }
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
 
-/******/ });
+	$(function() {
+	   $(".nav-menu-tree").on("click", function(e){
+	       var $this = $(this);
+	       e.preventDefault();
+	       $this.find(".pull-right").toggleClass("pull-right-rotate");
+	       $this.parent().find(".nav-menu-tree-ul").slideToggle(200);
+	   })
+	});
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by jill on 16/5/9.
+	 */
+
+	__webpack_require__(9);
+	__webpack_require__(10);
+	$(function() {
+	    //$("#navLeftFocus_1").addClass("active");
+	});
+
+
+/***/ }
+/******/ ]);

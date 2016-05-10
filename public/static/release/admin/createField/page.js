@@ -40,64 +40,88 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(12);
+	module.exports = __webpack_require__(8);
 
 
 /***/ },
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
 
-/***/ 12:
+	/**
+	 * Created by jill on 16/5/9.
+	 */
+
+	__webpack_require__(9);
+	__webpack_require__(10);
+	$(function() {
+	    var $thisNav = $("#navLeftFocus_createField");
+	    $thisNav.addClass("active");
+	    $thisNav.parent().css({"display": "block"});
+	});
+
+
+/***/ },
+/* 9 */
 /***/ function(module, exports) {
 
+	/**
+	 * Created by jill on 16/5/9.
+	 */
 	$(function(){
-	    var loginForm = $("#loginForm"),
-	        $loginFormMobile = $('#loginFormMobile'),
-	        $loginFormPassword = $('#loginFormPassword');
+	    $("#userMobileLoad").text(window.k.getAdminMobile());
 
-	    var retUrl = window.k.urlParams('retUrl') == false ? "/admin" : window.k.urlParams('retUrl');
-	    loginForm.on("submit", function(e) {
-	        e.preventDefault();
-	        var fields = loginForm.serializeArray(),
-	            submitData = {};
-	        for(var i=0,len=fields.length; i<len; i++) {
-	            if (fields[i].name == 'mobile') {
-	                fields[i].value = $.trim(fields[i].value);
-	                if (fields[i].value.length < 4) {
-	                    $loginFormMobile.addClass('has-error');
-	                    return;
-	                }
-	                submitData.mobile = fields[i].value;
-	            } else if (fields[i].name == 'password') {
-	                fields[i].value = $.trim(fields[i].value);
-	                if (fields[i].value.length < 1) {
-	                    $loginFormPassword.addClass('has-error');
-	                    return;
-	                }
-	                submitData.password = fields[i].value;
-	            }
-	        }
+	    $("#userLogout").on("click", function() {
+	        var $this = $(this);
 	        window.k.ajax({
 	            type: "POST",
-	            url: loginForm.attr('action'),
-	            data: submitData,
-	            success: function(data) {
+	            url: $this.data("url"),
+	            success: function(data){
 	                if(data.ok == 1) {
-	                    window.location.href = retUrl;
+	                    window.location.href = "/admin/login";
 	                }
 	                else {
-	                    if(data.msg) {
-	                        alert(data.msg);
-	                    }
+	                    alert(data.msg || "退出登录失败，请联系管理员");
 	                }
 	            }
 	        });
-	    })
+	    });
+
+	    $("#userModifyPassword").on("click", function() {
+	        var $this = $(this);
+	        alert("请联系管理员，暂时不开放");
+	        //window.k.ajax({
+	        //    type: "POST",
+	        //    url: $this.data("url"),
+	        //    success: function(data){
+	        //
+	        //    }
+	        //});
+	    });
+	});
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	$(function() {
+	   $(".nav-menu-tree").on("click", function(e){
+	       var $this = $(this);
+	       e.preventDefault();
+	       $this.find(".pull-right").toggleClass("pull-right-rotate");
+	       $this.parent().find(".nav-menu-tree-ul").slideToggle(200);
+	   })
 	});
 
 /***/ }
-
-/******/ });
+/******/ ]);

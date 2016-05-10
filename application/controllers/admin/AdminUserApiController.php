@@ -66,4 +66,11 @@ class AdminUserApiController extends AdminApiController{
         $userid = WkAdminUserService::getInstance()->submitAdminUserRegister($mobile, $password);
         return ['userid' => $userid];
     }
+
+    /**
+     * 修改管理员密码
+     */
+    public function modifyAdminPasswordAction() {
+
+    }
 } 

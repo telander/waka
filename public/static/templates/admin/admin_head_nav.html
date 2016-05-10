@@ -3,14 +3,14 @@
     <div class="header-nav">
 
             <div class="dropdown user-nav">
-                <a style="display:block; color: #fff !important; text-decoration: none;" class="dropdown-toggle" id="dropdownMenuUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" onclick="javascript:void(0)">
+                <a style="display:block; color: #fff !important; text-decoration: none;" class="dropdown-toggle nav-width" id="dropdownMenuUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" onclick="javascript:void(0)">
                     <span class="glyphicon glyphicon-user"></span>
-                    <span id="userMobileLoad" style="color: #fff" >用户</span>
+                    <span id="userMobileLoad" style="color: #fff" ></span>
                     <span class="caret"></span>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuUser">
-                    <li><button class="btn btn-default">修改密码</button></li>
-                    <li><button class="btn btn-default">登出</button></li>
+                <ul class="dropdown-menu horizon-top-ul nav-width" aria-labelledby="dropdownMenuUser">
+                    <li class="horizon-li"><button class="btn btn-default" id="userModifyPassword" data-url="/ajax/adminUserApi/modifyAdminPassword">修改密码</button></li>
+                    <li class="horizon-li"><button class="btn btn-default" id="userLogout" data-url="/ajax/adminUserApi/submitAdminLogout">登出</button></li>
                 </ul>
             </div>
 

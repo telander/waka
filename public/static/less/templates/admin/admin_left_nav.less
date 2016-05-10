@@ -1,0 +1,40 @@
+@import "../../modules/mixins.less";
+.nav-left {
+  width: 220px;
+  position:absolute;
+  top: 50px;
+  left: 0px;
+  display: block;
+  & > li:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+}
+
+.nav-menu-tree-ul {
+  padding-left: 20px;
+  width: 200px;
+  position: relative;
+  & > li:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  overflow: hidden;
+//  height: 0;
+  display: none;
+//  .transition(height 2s ease 0s);
+}
+
+.nav-menu-tree-ul-show {
+//  height: auto;
+  display: block;
+}
+
+.pull-right-rotate {
+  .rotateX(90);
+}
+
+
+.nav-right {
+  margin-left: 220px;
+  min-height: 516px;
+  box-shadow: -3px 0 20px -4px rgba(0,0,0,.07);
+}

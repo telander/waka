@@ -13,4 +13,7 @@ return [
     '/admin/login' => [
         'path' => '/admin/login',
     ],
+    '/admin/createField' => [
+        'path' => '/admin/createField',
+    ]
 ];

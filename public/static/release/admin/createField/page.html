@@ -10,7 +10,7 @@
 
     <link href='http://iwakasoccer.com:8888/static/css/bootstrap.min.css' rel='stylesheet'>
 
-    <link href='http://iwakasoccer.com:8888/static/release/admin/home/page.css' rel='stylesheet'>
+    <link href='http://iwakasoccer.com:8888/static/release/admin/createField/page.css' rel='stylesheet'>
     <script>
         var _hmt = {push: function(){}};
     </script>
@@ -56,15 +56,22 @@
 
 <div class="nav-right">
 
-        <h2 class="text-center" style="margin-top:100px;">欢迎来到哇咔足球管理后台！</h2>
-        <h3 class="text-center">请选择左侧导航栏进行操作</h3>
+        <div class="content-top-nav">
+            <ul class="nav nav-tabs nav-justified">
+                <li id="basicInfo" role="presentation" class="active"><a href="" onclick="javascript:void(0)">基本信息</a></li>
+                <li id="fieldBasicInfo" role="presentation" class=""><a href="" onclick="javascript:void(0)">场地基本信息</a></li>
+                <li id="fieldScheduleInfo" role="presentation" class=""><a href="" onclick="javascript:void(0)">球场时间信息</a></li>
+                <li id="fieldConstraintInfo" role="presentation" class=""><a href="" onclick="javascript:void(0)">场地限制信息</a></li>
+            </ul>
+        </div>
+
 
 
     </div>
 </div>
 
 <script src="http://iwakasoccer.com:8888/static/newlib/js/core/app.admin.min.js"></script>
-<script src="http://iwakasoccer.com:8888/static/release/admin/home/page.js"></script>
+<script src="http://iwakasoccer.com:8888/static/release/admin/createField/page.js"></script>
 <script>
     $document = $(document);
     $window = $(window);
